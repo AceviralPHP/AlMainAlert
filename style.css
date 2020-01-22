@@ -4,14 +4,19 @@
  * @author Timothy Wilson 2018 <https://github.com/Altrozero>
  */
 
+div#alSiteAlert-overlay, div#alSiteAlert-block {
+  z-index: 100;
+}
+
 div.alMainAlert, div.alMainAlertError {
   position: relative;
   padding: 10px 50px 10px 30px;
-  
+
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  z-index: 1;
+
+  z-index: 100;
 }
 
 div.alMainAlertError {
@@ -33,4 +38,4 @@ div.alMainAlertClose {
 
   cursor: pointer;
   font-family: Arial, Veranda;
-}
+

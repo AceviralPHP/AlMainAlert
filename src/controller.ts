@@ -59,7 +59,6 @@ export default class Controller
             ...alert
         };
 
-        console.log(alert);
         if (alert.reload) {
             try {
                 let data = Controller._get() || [];
@@ -98,7 +97,6 @@ export default class Controller
     {
         Controller._initContainers();
 
-        console.log("processing: ", alert);
         let $element = Controller._generateJqueryElement(alert);
 
         if (DisplayType.OVERLAY == alert.type) {
@@ -111,13 +109,11 @@ export default class Controller
             $("document, body").animate({
                 scrollTop: $(alert.scrollTo).offset().top
             }, 200);
-
-            // $(alert.scrollTo).scroll();
         }
 
         if (alert.timeout) {
             setTimeout(() => {
-                $element.remove();
+                $element.fadeOut(300, function() { $(this).remove() });
             }, alert.timeout);
         }
     }

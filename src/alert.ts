@@ -7,7 +7,7 @@ export interface Alert {
     message: string;
     class?: string;
     type?: DisplayType
-    reload?: boolean;
+    reload?: any;
     scrollTo?: string;
     timeout?: number;
 }

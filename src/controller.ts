@@ -65,8 +65,12 @@ export default class Controller
                 data.push(alert);
                 Controller._set(data);
 
-                window.location = window.location;
-            } catch (e) {}
+                if ("string" === typeof alert.reload) {
+                    window.location.href = alert.reload;
+                } else {
+                    window.location.href = window.location.href.split('#')[0];
+                }
+            } catch (e) {console.log(e)}
 
             return;
         }

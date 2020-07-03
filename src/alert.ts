@@ -9,6 +9,7 @@ export interface Alert {
     type?: DisplayType
     reload?: any;
     scrollTo?: string;
+    scrollTarget?: string;
     timeout?: number;
 }
 
@@ -18,5 +19,6 @@ export const alertTemplate: Alert = {
     type: DisplayType.OVERLAY,
     reload: false,
     scrollTo: "",
+    scrollTarget: "document, body",
     timeout: 0
 };

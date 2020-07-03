@@ -110,8 +110,12 @@ export default class Controller
         }
 
         if (alert.scrollTo) {
-            $("document, body").animate({
-                scrollTop: $(alert.scrollTo).offset().top
+            let offset = "number" == typeof alert.scrollTo 
+                ? alert.scrollTo 
+                : $(alert.scrollTo).offset().top;
+
+            $(alert.scrollTarget || "document, body").animate({
+                scrollTop: offset
             }, 200);
         }
 

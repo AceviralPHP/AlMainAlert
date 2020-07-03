@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "declaration": true,
+        "outDir": "dst",
         "sourceMap": true,
         "module": "commonjs",
         "esModuleInterop": true,
